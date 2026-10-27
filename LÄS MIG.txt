@@ -1,0 +1,61 @@
+﻿GROTTMÄSTAREN PÅ IPADEN
+=======================
+
+STARTA
+1. Dubbelklicka på "Starta Grottmastaren.bat".
+2. Första gången frågar Windows om brandväggen. Kryssa i "Privata nätverk" och tryck "Tillåt åtkomst".
+3. Fönstret visar en adress, t.ex. http://192.168.1.23:8077
+
+PÅ IPADEN
+1. iPaden ska vara på samma wifi som datorn.
+2. Öppna Safari och skriv in adressen från fönstret.
+3. Tryck på dela-knappen (fyrkanten med pilen) och välj "Lägg till på hemskärmen".
+   Nu finns Grottmästaren som en egen ikon och öppnas i helskärm.
+
+SÅ BEHÅLLER DU DEN
+- Servern behövs bara när spelet laddas. När spelet väl är öppet kan du spela vidare även om datorn stängs av.
+  Om du laddar om sidan eller öppnar den på nytt måste servern vara igång igen.
+- Banor, kampanjframsteg och inställningar sparas i Safari på iPaden.
+  De finns kvar så länge du öppnar spelet från SAMMA adress.
+- Adressen bygger på datorns IP-nummer. Om routern ger datorn ett nytt nummer blir det en ny adress,
+  och då ser iPaden det som ett nytt spel utan dina sparade framsteg.
+  Ge därför datorn ett fast IP-nummer i routern ("DHCP-reservation" eller "fast IP").
+
+STARTA AUTOMATISKT MED DATORN (valfritt)
+1. Högerklicka på "Starta Grottmastaren.bat" och välj "Skapa genväg".
+2. Tryck Windows-tangenten + R, skriv  shell:startup  och tryck Enter.
+3. Flytta genvägen till mappen som öppnas.
+
+NY VERSION AV SPELET
+Byt ut index.html i den här mappen mot den nya filen. Ladda sedan om sidan på iPaden.
+Servern behöver inte startas om.
+
+FUNGERAR INTE?
+- Får iPaden ingen kontakt: kontrollera att den är på samma wifi och att brandväggen tillåter "Windows PowerShell"
+  för privata nätverk (Windows-säkerhet > Brandvägg > Tillåt en app genom brandväggen).
+- Är wifi-nätverket i Windows inställt som "Offentligt" blockeras iPaden. Ändra till "Privat" under
+  Inställningar > Nätverk och Internet > Wi-Fi > ditt nätverk.
+
+
+NÄTVERKSSPEL FÖR UPP TILL FYRA SPELARE
+======================================
+Kräver Node.js på datorn (gratis, https://nodejs.org, välj "LTS").
+
+1. Dubbelklicka på "Starta natverksspel.bat".
+   Första gången frågar Windows om brandväggen för Node.js: tillåt "Privata nätverk".
+2. Fönstret visar en adress, t.ex. http://192.168.1.23:8077
+   (Det är en annan server än den vanliga, använd bara en av dem åt gången.)
+3. Öppna adressen på varje surfplatta, telefon eller dator i hemmanätet.
+4. Tryck på Nätverk, skriv ditt namn och tryck Gå med.
+5. Den som gick med först bestämmer spelläge och trycker Starta matchen.
+   Lediga platser kan spelas av datorn.
+
+Servern startar själv en osynlig "värd" (Edge eller Chrome) som kör hela spelet,
+så surfplattorna bara behöver rita. Vill du se värden: starta med
+   node server.js --visa-vard
+Allt som händer loggas i mappen logs.
+
+Spellägen:
+- Kungen av kullen: ha monster på kullen i mitten när ingen annan har det. 1 poäng per sekund.
+- Sista hjärtat: krossa de andras hjärtan.
+- Guldrush: först att samla in målet i guld.

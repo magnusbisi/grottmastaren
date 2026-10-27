@@ -1,0 +1,15 @@
+# Webbläsarprofil som nätverksservern skapar
+.vardprofil/
+
+# Serverloggar (innehåller IP-adresser från hemnätet)
+logs/
+*.log
+
+# Tävlingsunderlag, sparas lokalt
+Tävling/
+Tavling/
+
+# Systemfiler
+Thumbs.db
+desktop.ini
+.DS_Store
